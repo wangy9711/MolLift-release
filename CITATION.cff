@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this software when using MolLift."
+title: "MolLift: molecular conformer recovery from planar observations"
+type: software
+version: 0.1.0
+date-released: 2026-09-27
+license: MIT
+authors:
+  - name: Yu Wang

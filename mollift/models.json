@@ -1,0 +1,14 @@
+{
+  "mollift-drugs": {
+    "filename": "mollift-drugs.pt", "dataset": "GEOM-Drugs", "regime": "mixed", "epoch": 197,
+    "sha256": "cc03ad30e0fe97fa497c399a8bc667b11f6ede0c385d97cba606bd72603a26d6",
+    "source_sha256": "99282ef65a1ecc69bbb50dcc889d994c0e223174fb0abb8ea8809153f1d20aa6",
+    "size_bytes": 35030639
+  },
+  "mollift-peptide": {
+    "filename": "mollift-peptide.pt", "dataset": "PDB peptide fragments", "regime": "mixed", "epoch": 20,
+    "sha256": "9a283bca74884962080e99cce3c2c2e50af42cbd1f6ddbf3e94c81dcf13e5136",
+    "source_sha256": "a0c4892e39e1997e9cbd8029683f0d3436f728ad8abb9acec6ba1959bcaba6fa",
+    "size_bytes": 35023969
+  }
+}

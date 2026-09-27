@@ -1,0 +1,13 @@
+{
+  "model_name": "mollift-drugs",
+  "epoch": 197,
+  "val_loss": 0.443489809513673,
+  "source_checkpoint": "geom_drugs_mixed_ratio_best.pt",
+  "source_sha256": "99282ef65a1ecc69bbb50dcc889d994c0e223174fb0abb8ea8809153f1d20aa6",
+  "weights": "EMA",
+  "filename": "mollift-drugs.pt",
+  "sha256": "cc03ad30e0fe97fa497c399a8bc667b11f6ede0c385d97cba606bd72603a26d6",
+  "size_bytes": 35030639,
+  "dataset": "geom_drugs",
+  "regime": "mixed"
+}

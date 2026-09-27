@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+outputs/
+logs/
+*.log
+/data/
+*.pt
+!/checkpoints/mollift-drugs.pt
+!/checkpoints/mollift-peptide.pt
+*.cpt
+*.safetensors
+.DS_Store

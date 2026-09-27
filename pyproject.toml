@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mollift"
+version = "0.1.0"
+description = "Recover molecular conformers from atom-aligned planar observations"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = ["torch>=2.4", "numpy>=1.24", "rdkit>=2025.3", "pyyaml>=6", "tqdm>=4"]
+
+[project.optional-dependencies]
+refiner = ["openbabel-wheel==3.1.1.22"]
+train = ["pandas>=2", "pyarrow>=14"]
+annotator = ["PySide6>=6.5", "pillow>=10"]
+dev = ["pytest>=7", "build", "pillow>=10", "pandas>=2", "pyarrow>=14"]
+
+[project.scripts]
+mollift = "mollift.cli:main"
+mollift-annotator = "mollift_annotator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mollift", "mollift.*", "mollift_generator*", "mollift_solver*", "mollift_refiner*", "mollift_annotator*"]
+
+[tool.setuptools.package-data]
+mollift = ["models.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"

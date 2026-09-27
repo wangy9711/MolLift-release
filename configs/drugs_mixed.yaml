@@ -1,0 +1,65 @@
+# GEOM-Drugs training with mixed projection-observation ratios.
+run_name: geom_drugs_mixed_ratio
+seed: 42
+
+data:
+  dataset: geom_drugs
+  cache_root: data/geom_drugs
+  split: train
+  valid_split: valid
+  conformer_sampling: uniform
+  max_atoms: 181
+  dynamic_padding: true
+  max_hop: 8
+  projection_mode: synthetic
+  ratio_proj: 1.0
+  ratio_proj_choices: [0.3, 0.5, 0.8, 1.0]
+  validation_ratio_proj_choices: [0.3, 0.5, 0.8, 1.0]
+  coord_units: angstrom
+
+model:
+  model_type: ape
+  hidden_dim: 256
+  num_layers: 6
+  num_heads: 8
+  num_atom_types: 100
+  atom_feature_dim: 72
+  bond_feature_dim: 5
+  use_2d_condition: true
+  use_chirality: false
+  num_radial_basis: 8
+  embed_shortest_hops: true
+
+train:
+  resume: true
+  # Worst-case smoke: 32 molecules padded to 181 atoms peaked at 22.2 GiB on 32 GiB.
+  batch_size: 32
+  epochs: 200
+  lr: 3.0e-4
+  weight_decay: 1.0e-2
+  sigma: 0.08
+  t_weight_cap: 0.95
+  lambda_proj_xy: 1.0
+  lambda_proj_pair: 0.0
+  lambda_bond: 1.0
+  prior_type: harmonic
+  align_x0: false
+  augmentation_bool: true
+  use_ema: true
+  ema_decay: 0.999
+  lr_schedule: warmup_cosine
+  lr_init: 1.0e-5
+  lr_warmup_fraction: 0.01
+  lr_decay_fraction: 0.99
+  log_every: 100
+  val_every: 1
+  num_workers: 4
+  prefetch_factor: 4
+  use_amp: true
+  grad_clip_norm: 1.0
+  checkpoint_dir: checkpoints
+  log_dir: logs
+
+sample:
+  num_steps: 50
+  projection_guidance_alpha: 0.0

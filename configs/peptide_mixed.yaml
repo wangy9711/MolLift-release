@@ -1,0 +1,75 @@
+run_name: pdb_transfer_mixed_ratio
+seed: 42
+
+data:
+  dataset: pdb_transfer
+  pdb_root: data/pdb_fragments
+  drugs_cache_root: data/geom_drugs
+  pdb_fraction: 0.75
+  pdb_valid_per_stratum: 10
+  drugs_valid_limit: 2000
+  max_atoms: 500
+  max_hop: 8
+  projection_mode: synthetic
+  ratio_proj: 1.0
+  ratio_proj_choices: [0.3, 0.5, 0.8, 1.0]
+  validation_ratio_proj_choices: [0.3, 0.5, 0.8, 1.0]
+  coord_units: angstrom
+
+model:
+  model_type: ape
+  hidden_dim: 256
+  num_layers: 6
+  num_heads: 8
+  num_atom_types: 100
+  atom_feature_dim: 72
+  bond_feature_dim: 5
+  use_2d_condition: true
+  use_chirality: false
+  num_radial_basis: 8
+  embed_shortest_hops: true
+
+train:
+  resume: true
+  gpu_max_used_mib: 0
+  gpu_gate_poll_seconds: 60
+  init_checkpoint: checkpoints/mollift-drugs.pt
+  checkpoint_dir: checkpoints/pdb_transfer
+  log_dir: logs/pdb_transfer
+  pdb_samples_per_epoch: 46000
+  atom_buckets:
+    - {max_atoms: 128, batch_size: 32}
+    - {max_atoms: 181, batch_size: 16}
+    - {max_atoms: 256, batch_size: 8}
+    - {max_atoms: 384, batch_size: 4}
+    - {max_atoms: 500, batch_size: 2}
+  target_graphs_per_step: 32
+  curriculum:
+    - {until_epoch: 3, max_length: 30}
+    - {until_epoch: 6, max_length: 40}
+  epochs: 30
+  lr: 3.0e-5
+  lr_init: 1.0e-6
+  lr_warmup_fraction: 0.03
+  lr_decay_fraction: 0.97
+  weight_decay: 1.0e-2
+  sigma: 0.08
+  t_weight_cap: 0.95
+  lambda_proj_xy: 1.0
+  lambda_proj_pair: 0.0
+  lambda_bond: 1.0
+  prior_type: harmonic
+  align_x0: false
+  augmentation_bool: true
+  use_ema: true
+  ema_decay: 0.999
+  use_amp: true
+  grad_clip_norm: 1.0
+  drugs_retention_tolerance: 0.05
+  drugs_valid_batch_size: 16
+  num_workers: 4
+  log_every: 100
+
+sample:
+  num_steps: 50
+  projection_guidance_alpha: 0.0

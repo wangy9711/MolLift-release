@@ -1,0 +1,205 @@
+{
+  "format_version": "1.0",
+  "smiles": "CC(=O)NCC(=O)N[C@@H](C)C(=O)NCC(=O)N[C@@H](C)C(=O)NCC(=O)NC",
+  "image": {
+    "path": "peptide_projection.png",
+    "width": 800,
+    "height": 600
+  },
+  "num_atoms": 27,
+  "annotated_mask": [
+    true,
+    true,
+    false,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+    true
+  ],
+  "annotations": [
+    {
+      "atom_index": 0,
+      "symbol": "C",
+      "pixel": [
+        504.25864957772166,
+        326.86303830231344
+      ]
+    },
+    {
+      "atom_index": 1,
+      "symbol": "C",
+      "pixel": [
+        544.616598249955,
+        299.893170917005
+      ]
+    },
+    {
+      "atom_index": 3,
+      "symbol": "N",
+      "pixel": [
+        546.2033001168829,
+        245.2612288212893
+      ]
+    },
+    {
+      "atom_index": 4,
+      "symbol": "C",
+      "pixel": [
+        584.4725908307071,
+        213.2100818226777
+      ]
+    },
+    {
+      "atom_index": 6,
+      "symbol": "O",
+      "pixel": [
+        566.2316747595321,
+        157.47077906617992
+      ]
+    },
+    {
+      "atom_index": 7,
+      "symbol": "N",
+      "pixel": [
+        555.7888865596042,
+        248.06069508278915
+      ]
+    },
+    {
+      "atom_index": 8,
+      "symbol": "C",
+      "pixel": [
+        543.5582401358995,
+        246.72075422448773
+      ]
+    },
+    {
+      "atom_index": 9,
+      "symbol": "C",
+      "pixel": [
+        594.3661352286416,
+        243.87130538902682
+      ]
+    },
+    {
+      "atom_index": 10,
+      "symbol": "C",
+      "pixel": [
+        509.24772560258054,
+        295.6110621721256
+      ]
+    },
+    {
+      "atom_index": 12,
+      "symbol": "N",
+      "pixel": [
+        477.5239782111744,
+        314.72730941272306
+      ]
+    },
+    {
+      "atom_index": 14,
+      "symbol": "C",
+      "pixel": [
+        382.1123775587455,
+        320.5482882590872
+      ]
+    },
+    {
+      "atom_index": 15,
+      "symbol": "O",
+      "pixel": [
+        374.19712332585345,
+        277.15623073965577
+      ]
+    },
+    {
+      "atom_index": 16,
+      "symbol": "N",
+      "pixel": [
+        344.70335581313265,
+        345.9317450328266
+      ]
+    },
+    {
+      "atom_index": 17,
+      "symbol": "C",
+      "pixel": [
+        289.956865227996,
+        326.07745747028247
+      ]
+    },
+    {
+      "atom_index": 19,
+      "symbol": "C",
+      "pixel": [
+        255.9352855592608,
+        356.21538875552744
+      ]
+    },
+    {
+      "atom_index": 20,
+      "symbol": "O",
+      "pixel": [
+        271.83206607583526,
+        396.79899645868716
+      ]
+    },
+    {
+      "atom_index": 21,
+      "symbol": "N",
+      "pixel": [
+        205.4133184783815,
+        335.37682191181005
+      ]
+    },
+    {
+      "atom_index": 24,
+      "symbol": "O",
+      "pixel": [
+        181.99955701142696,
+        272.6318366746945
+      ]
+    },
+    {
+      "atom_index": 25,
+      "symbol": "N",
+      "pixel": [
+        179.07210514728888,
+        349.6868932198032
+      ]
+    },
+    {
+      "atom_index": 26,
+      "symbol": "C",
+      "pixel": [
+        189.14080345946107,
+        322.5064485047493
+      ]
+    }
+  ],
+  "skipped_atoms": [],
+  "metadata": {
+    "source": "RDKit synthetic demo, not a paper case"
+  }
+}
